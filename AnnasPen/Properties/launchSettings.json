@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AnnasPen": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

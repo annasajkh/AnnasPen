@@ -1,0 +1,12 @@
+D:\Projects\C#\AnnasPen\AnnasUI\bin\Debug\net6.0\AnnasUI.deps.json
+D:\Projects\C#\AnnasPen\AnnasUI\bin\Debug\net6.0\AnnasUI.dll
+D:\Projects\C#\AnnasPen\AnnasUI\bin\Debug\net6.0\AnnasUI.pdb
+D:\Projects\C#\AnnasPen\AnnasUI\obj\Debug\net6.0\AnnasUI.csproj.AssemblyReference.cache
+D:\Projects\C#\AnnasPen\AnnasUI\obj\Debug\net6.0\AnnasUI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\C#\AnnasPen\AnnasUI\obj\Debug\net6.0\AnnasUI.AssemblyInfoInputs.cache
+D:\Projects\C#\AnnasPen\AnnasUI\obj\Debug\net6.0\AnnasUI.AssemblyInfo.cs
+D:\Projects\C#\AnnasPen\AnnasUI\obj\Debug\net6.0\AnnasUI.csproj.CoreCompileInputs.cache
+D:\Projects\C#\AnnasPen\AnnasUI\obj\Debug\net6.0\AnnasUI.dll
+D:\Projects\C#\AnnasPen\AnnasUI\obj\Debug\net6.0\refint\AnnasUI.dll
+D:\Projects\C#\AnnasPen\AnnasUI\obj\Debug\net6.0\AnnasUI.pdb
+D:\Projects\C#\AnnasPen\AnnasUI\obj\Debug\net6.0\ref\AnnasUI.dll

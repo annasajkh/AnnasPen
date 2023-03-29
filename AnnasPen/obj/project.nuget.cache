@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "XQUTqFJnDzI5BId30j0cc5lmkuHW1Iczq5NCotKUv6k4HzdOlv9+yUEVc6W6HMlUYvUQBUgWkws+Q6Xw0oCsCA==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\C#\\AnnasPen\\AnnasPen\\AnnasPen.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Annas\\.nuget\\packages\\raylib-cs\\4.2.0.2\\raylib-cs.4.2.0.2.nupkg.sha512",
+    "C:\\Users\\Annas\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
