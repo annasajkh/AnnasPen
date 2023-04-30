@@ -1,7 +1,6 @@
 ﻿using AnnasPen.Actions;
 using AnnasPen.Components;
 using AnnasPen.Utils;
-using AnnasUI.Buttons;
 using Raylib_cs;
 using System.Numerics;
 
@@ -76,8 +75,6 @@ namespace AnnasPen
                                          rotation: 0,
                                          1.0f);
 
-            Button button = new Button("meow", new Vector2(100, 100), new Vector2(50, 50), Raylib.GetFontDefault(), 20, Color.WHITE);
-
 
             while (!Raylib.WindowShouldClose())
             {
@@ -125,9 +122,6 @@ namespace AnnasPen
                 Raylib.DrawCircleLines((int)Global.cameraOffsettedMousePosition.X, (int)Global.cameraOffsettedMousePosition.Y, Global.brush.size * 0.5f, Color.GRAY);
 
                 Raylib.EndMode2D();
-
-
-                button.Draw();
 
                 Raylib.DrawLine(Raylib.GetScreenWidth() / 2,
                                 Raylib.GetScreenHeight() / 2 - 10,
