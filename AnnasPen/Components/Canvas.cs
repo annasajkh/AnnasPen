@@ -111,6 +111,7 @@ namespace AnnasPen.Components
             // redraw the RenderTexture2D with all of the undoHistory
             //-------------------------------------------------------------------------------------------------------
             Raylib.BeginTextureMode(RenderTexture2D);
+
             for (int i = 1; i <= undoHistoryPointer; i++)
             {
                 textures.Add(Raylib.LoadTextureFromImage(undoHistory[i].image));
@@ -122,9 +123,13 @@ namespace AnnasPen.Components
                                   (int)undoHistory[i].position.Y,
                                   Color.WHITE);
 
-                Raylib.DrawRectangleLines((int)undoHistory[i].position.X, (int)undoHistory[i].position.Y, undoHistory[i].image.width, undoHistory[i].image.height, Color.BLACK);
+                //Raylib.DrawRectangleLinesEx(new Rectangle((int)undoHistory[i].position.X,
+                //                                          (int)undoHistory[i].position.Y,
+                //                                          undoHistory[i].image.width,
+                //                                          undoHistory[i].image.height), 1, Color.BLACK);
 
             }
+
             Raylib.EndTextureMode();
             //--------------------------------------------------------------------------------------------------------
 
@@ -150,10 +155,35 @@ namespace AnnasPen.Components
             Image image = Raylib.LoadImageFromTexture(RenderTexture2D.texture);
 
 
+            if (undoHistoryRectangleRight > width)
+            {
+                undoHistoryRectangleRight = width;
+            }
+            
+            if (undoHistoryRectangleLeft < 0)
+            {
+                undoHistoryRectangleLeft = 0;
+            }
+
+            if (undoHistoryRectangleBottom > height)
+            {
+                undoHistoryRectangleBottom = height;
+            }
+
+            if (undoHistoryRectangleTop < 0)
+            {
+                undoHistoryRectangleTop = 0;
+            }
+
+            undoHistoryRectangleTop = (float)Math.Floor(undoHistoryRectangleTop);
+            undoHistoryRectangleBottom = (float)Math.Floor(undoHistoryRectangleBottom);
+            undoHistoryRectangleLeft = (float)Math.Floor(undoHistoryRectangleLeft);
+            undoHistoryRectangleRight = (float)Math.Floor(undoHistoryRectangleRight);
+
             undoHistoryRectangle = new Rectangle(undoHistoryRectangleLeft,
                                                  undoHistoryRectangleTop,
-                                                 undoHistoryRectangleRight - undoHistoryRectangleLeft,
-                                                 undoHistoryRectangleBottom - undoHistoryRectangleTop);
+                                                 Math.Abs(undoHistoryRectangleRight - undoHistoryRectangleLeft),
+                                                 Math.Abs(undoHistoryRectangleBottom - undoHistoryRectangleTop));
 
             undoHistoryRectangleLeft = 0;
             undoHistoryRectangleRight = 0;
@@ -165,9 +195,10 @@ namespace AnnasPen.Components
 
 
 
+            
             undoHistory.Add(new ImagePart(new Vector2(undoHistoryRectangle.x, undoHistoryRectangle.y), image));
             undoHistoryPointer++;
-
+                
             if (undoHistory.Count > Global.undoLimit)
             {
                 Raylib.UnloadImage(undoHistory[0].image);
@@ -175,7 +206,8 @@ namespace AnnasPen.Components
                 undoHistoryPointer--;
             }
 
-            Raylib.DrawRectangleLinesEx(undoHistoryRectangle, 1, Color.BLACK);
+            //Raylib.DrawRectangleLinesEx(undoHistoryRectangle, 1, Color.BLACK);
+
         }
 
         public void Undo()
@@ -199,9 +231,6 @@ namespace AnnasPen.Components
 
         public void DrawOnCanvas(DrawAction drawAction)
         {
-
-            float brushSize = drawAction.brush.size;
-
             // Constructs rectangle that covered the area where the user draw
             // ------------------------------------------------------------------------------------------------
 
@@ -210,67 +239,49 @@ namespace AnnasPen.Components
 
             if (undoHistoryRectangleLeft == 0)
             {
-                undoHistoryRectangleLeft = drawAction.position.X - brushSize;
+                undoHistoryRectangleLeft = drawAction.position.X - drawAction.brush.size;
             }
 
             if (undoHistoryRectangleRight == 0)
             {
-                undoHistoryRectangleRight = drawAction.position.X + brushSize;
+                undoHistoryRectangleRight = drawAction.position.X + drawAction.brush.size;
             }
 
 
             if (undoHistoryRectangleTop == 0)
             {
-                undoHistoryRectangleTop = drawAction.position.Y - brushSize;
+                undoHistoryRectangleTop = drawAction.position.Y - drawAction.brush.size;
             }
 
             if (undoHistoryRectangleBottom == 0)
             {
-                undoHistoryRectangleBottom = drawAction.position.Y + brushSize;
+                undoHistoryRectangleBottom = drawAction.position.Y + drawAction.brush.size;
             }
 
 
             // Left
-            if (drawAction.position.X - brushSize < undoHistoryRectangleLeft)
+            if (drawAction.position.X - drawAction.brush.size < undoHistoryRectangleLeft)
             {
-                undoHistoryRectangleLeft = drawAction.position.X - brushSize;
+                undoHistoryRectangleLeft = drawAction.position.X - drawAction.brush.size;
             }
 
             // Right
-            if (drawAction.position.X + brushSize > undoHistoryRectangleRight)
+            if (drawAction.position.X + drawAction.brush.size > undoHistoryRectangleRight)
             {
-                undoHistoryRectangleRight = drawAction.position.X + brushSize;
+                undoHistoryRectangleRight = drawAction.position.X + drawAction.brush.size;
             }
 
 
             // Top
-            if (drawAction.position.Y - brushSize < undoHistoryRectangleTop)
+            if (drawAction.position.Y - drawAction.brush.size < undoHistoryRectangleTop)
             {
-                undoHistoryRectangleTop = drawAction.position.Y - brushSize;
+                undoHistoryRectangleTop = drawAction.position.Y - drawAction.brush.size;
             }
 
             // Bottom
-            if (drawAction.position.Y + brushSize > undoHistoryRectangleBottom)
+            if (drawAction.position.Y + drawAction.brush.size > undoHistoryRectangleBottom)
             {
-                undoHistoryRectangleBottom = drawAction.position.Y + brushSize;
-            }
-
-            if (undoHistoryRectangleRight > width)
-            {
-                undoHistoryRectangleRight = width;
-            }
-            else if (undoHistoryRectangleLeft < 0)
-            {
-                undoHistoryRectangleLeft = 0;
-            }
-
-            if (undoHistoryRectangleBottom > height)
-            {
-                undoHistoryRectangleBottom = height;
-            }
-            else if (undoHistoryRectangleTop < 0)
-            {
-                undoHistoryRectangleTop = 0;
+                undoHistoryRectangleBottom = drawAction.position.Y + drawAction.brush.size;
             }
 
             // ------------------------------------------------------------------------------------------------
@@ -289,7 +300,7 @@ namespace AnnasPen.Components
                 case DrawType.CIRCLE:
                     Raylib.DrawCircle((int)drawAction.position.X, 
                                       (int)drawAction.position.Y,
-                                      drawAction.brush.size,
+                                      drawAction.brush.size * 0.5f,
                                       drawAction.brush.color);
                     break;
 

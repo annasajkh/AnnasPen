@@ -1,6 +1,7 @@
 ﻿using AnnasPen.Actions;
 using AnnasPen.Components;
 using AnnasPen.Utils;
+using AnnasUI.Buttons;
 using Raylib_cs;
 using System.Numerics;
 
@@ -10,26 +11,18 @@ namespace AnnasPen
 
     internal class Program
     {
-        private static Canvas canvas = new Canvas(Raylib.GetScreenWidth(), Raylib.GetScreenHeight(), Color.WHITE);
+        private static Canvas canvas = new Canvas(1000, 1000, Color.WHITE);
+        private static Vector2 previousMousePosition = Raylib.GetMousePosition();
 
         private static void GetInput()
         {
-            if (Raylib.IsMouseButtonDown(MouseButton.MOUSE_BUTTON_LEFT) &&
-                    Raylib.IsKeyDown(KeyboardKey.KEY_LEFT_CONTROL))
-            {
-                Vector2 dir = Vector2.Normalize(Raylib.GetMousePosition() - Global.camera.offset);
+            Vector2 mousePosition = Raylib.GetMousePosition();
 
-                Global.camera.offset += dir;
-            }
-            else if (Raylib.IsMouseButtonDown(MouseButton.MOUSE_BUTTON_LEFT))
-            {
-                canvas.DrawOnCanvas(new DrawAction(Global.cameraOffsettedMousePosition, Global.brush));
-            }
-            else if (Raylib.IsMouseButtonReleased(MouseButton.MOUSE_BUTTON_LEFT))
-            {
-                canvas.FinishDrawing();
-            }
-            else if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT_CONTROL) &&
+            Vector2 delta = previousMousePosition - mousePosition;
+
+            previousMousePosition = mousePosition;
+
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT_CONTROL) &&
                 Raylib.IsKeyPressed(KeyboardKey.KEY_Y))
             {
                 canvas.Redo();
@@ -39,8 +32,28 @@ namespace AnnasPen
             {
                 canvas.Undo();
             }
-
-            Global.camera.zoom += ((float)Raylib.GetMouseWheelMove() * 0.05f * Global.camera.zoom);
+            else if (Raylib.IsMouseButtonDown(MouseButton.MOUSE_BUTTON_RIGHT))
+            {
+                Global.camera.target = Raylib.GetScreenToWorld2D(Global.camera.offset + delta, Global.camera);
+            }
+            else if (Raylib.IsMouseButtonDown(MouseButton.MOUSE_BUTTON_LEFT) && Global.mouseInsideCanvas)
+            {
+                canvas.DrawOnCanvas(new DrawAction(Global.cameraOffsettedMousePosition, Global.brush));
+                Global.drawing = true;
+            }
+            else if (Raylib.IsMouseButtonReleased(MouseButton.MOUSE_BUTTON_LEFT) && Global.drawing)
+            {
+                canvas.FinishDrawing();
+                Global.drawing = false;
+            }
+            else if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT_CONTROL))
+            {
+                Global.brush.size += Raylib.GetMouseWheelMove();
+            }
+            else
+            {
+                Global.camera.zoom += (float)Raylib.GetMouseWheelMove() * 0.05f * Global.camera.zoom;
+            }
         }
 
         public static void UpdateAndDrawOnCanvas()
@@ -55,43 +68,78 @@ namespace AnnasPen
 
         public static void Main()
         {
+
             Raylib.InitWindow(860, 560, "Annas Pen");
 
             Global.camera = new Camera2D(offset: new Vector2(Raylib.GetScreenWidth() / 2, Raylib.GetScreenHeight() / 2),
-                                         target: new Vector2(Raylib.GetScreenWidth() / 2, Raylib.GetScreenHeight() / 2),
+                                         target: new Vector2(canvas.Width / 2, canvas.Height / 2),
                                          rotation: 0,
                                          1.0f);
+
+            Button button = new Button("meow", new Vector2(100, 100), new Vector2(50, 50), Raylib.GetFontDefault(), 20, Color.WHITE);
 
 
             while (!Raylib.WindowShouldClose())
             {
+
+                if (Global.brush.size < 5)
+                {
+                    Global.brush.size = 5;
+                }
+                else if (Global.brush.size > 100)
+                {
+                    Global.brush.size = 100;
+                }
+
                 if (Global.camera.zoom > 50.0f)
                 {
                     Global.camera.zoom = 50.0f;
                 }
-                else if (Global.camera.zoom < 0.1f)
+                else if (Global.camera.zoom < 0.25f)
                 {
-                    Global.camera.zoom = 0.1f;
+                    Global.camera.zoom = 0.25f;
                 }
 
                 Global.cameraOffsettedMousePosition = Raylib.GetScreenToWorld2D(Raylib.GetMousePosition(), Global.camera);
 
+                Global.mouseInsideCanvas = Raylib.CheckCollisionCircleRec(Global.cameraOffsettedMousePosition,
+                                                                          Global.brush.size * 0.5f,
+                                                                          new Rectangle(0,
+                                                                                        0,
+                                                                                        canvas.Width,
+                                                                                        canvas.Height));
+
                 UpdateAndDrawOnCanvas();
 
-
-                RenderTexture2D renderTexture2D = canvas.RenderTexture2D;
-
                 Raylib.BeginDrawing();
-                
+
                 Raylib.ClearBackground(Color.DARKGRAY);
 
                 Raylib.BeginMode2D(Global.camera);
 
-                Raylib.DrawTextureRec(renderTexture2D.texture,
-                                      new Rectangle(0, 0, renderTexture2D.texture.width, -renderTexture2D.texture.height),
-                                      new Vector2(0, 0),
-                                      canvas.Color);
+                Raylib.DrawTextureRec(texture: canvas.RenderTexture2D.texture,
+                                      source: new Rectangle(0, 0, canvas.RenderTexture2D.texture.width, -canvas.RenderTexture2D.texture.height),
+                                      position: Vector2.Zero,
+                                      tint: canvas.Color);
+
+                Raylib.DrawCircleLines((int)Global.cameraOffsettedMousePosition.X, (int)Global.cameraOffsettedMousePosition.Y, Global.brush.size * 0.5f, Color.GRAY);
+
                 Raylib.EndMode2D();
+
+
+                button.Draw();
+
+                Raylib.DrawLine(Raylib.GetScreenWidth() / 2,
+                                Raylib.GetScreenHeight() / 2 - 10,
+                                Raylib.GetScreenWidth() / 2,
+                                Raylib.GetScreenHeight() / 2 + 10,
+                                Color.GRAY);
+
+                Raylib.DrawLine(Raylib.GetScreenWidth() / 2 - 10,
+                                Raylib.GetScreenHeight() / 2,
+                                Raylib.GetScreenWidth() / 2 + 10,
+                                Raylib.GetScreenHeight() / 2,
+                                Color.GRAY);
 
                 Raylib.EndDrawing();
             }

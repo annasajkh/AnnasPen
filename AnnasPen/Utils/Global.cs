@@ -11,6 +11,7 @@ namespace AnnasPen.Utils
         public static Vector2 cameraOffsettedMousePosition;
 
         public static int undoLimit = 100;
-
+        public static bool mouseInsideCanvas = false;
+        public static bool drawing = false;
     }
 }
