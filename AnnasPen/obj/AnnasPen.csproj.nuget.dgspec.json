@@ -1,26 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\C#\\AnnasPen\\AnnasPen\\AnnasPen.csproj": {}
+    "D:\\Project\\Visual Studio 2022\\_Clones\\AnnasPen\\AnnasPen\\AnnasPen.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\C#\\AnnasPen\\AnnasPen\\AnnasPen.csproj": {
+    "D:\\Project\\Visual Studio 2022\\_Clones\\AnnasPen\\AnnasPen\\AnnasPen.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\C#\\AnnasPen\\AnnasPen\\AnnasPen.csproj",
+        "projectUniqueName": "D:\\Project\\Visual Studio 2022\\_Clones\\AnnasPen\\AnnasPen\\AnnasPen.csproj",
         "projectName": "AnnasPen",
-        "projectPath": "D:\\Projects\\C#\\AnnasPen\\AnnasPen\\AnnasPen.csproj",
-        "packagesPath": "C:\\Users\\Annas\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\C#\\AnnasPen\\AnnasPen\\obj\\",
+        "projectPath": "D:\\Project\\Visual Studio 2022\\_Clones\\AnnasPen\\AnnasPen\\AnnasPen.csproj",
+        "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\Visual Studio 2022\\_Clones\\AnnasPen\\AnnasPen\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Users\\Annas\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Annas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\Annas\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,8 +28,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj": {
-                "projectPath": "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj"
+              "D:\\Project\\Visual Studio 2022\\_Clones\\AnnasPen\\AnnasUI\\AnnasUI.csproj": {
+                "projectPath": "D:\\Project\\Visual Studio 2022\\_Clones\\AnnasPen\\AnnasUI\\AnnasUI.csproj"
               }
             }
           }
@@ -71,27 +65,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj": {
+    "D:\\Project\\Visual Studio 2022\\_Clones\\AnnasPen\\AnnasUI\\AnnasUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj",
+        "projectUniqueName": "D:\\Project\\Visual Studio 2022\\_Clones\\AnnasPen\\AnnasUI\\AnnasUI.csproj",
         "projectName": "AnnasUI",
-        "projectPath": "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj",
-        "packagesPath": "C:\\Users\\Annas\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\obj\\",
+        "projectPath": "D:\\Project\\Visual Studio 2022\\_Clones\\AnnasPen\\AnnasUI\\AnnasUI.csproj",
+        "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\Visual Studio 2022\\_Clones\\AnnasPen\\AnnasUI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Users\\Annas\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Annas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\Annas\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -138,7 +126,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

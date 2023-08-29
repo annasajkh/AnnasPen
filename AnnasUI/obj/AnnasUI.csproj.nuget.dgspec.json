@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj": {}
+    "D:\\Project\\Visual Studio 2022\\_Clones\\AnnasPen\\AnnasUI\\AnnasUI.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj": {
+    "D:\\Project\\Visual Studio 2022\\_Clones\\AnnasPen\\AnnasUI\\AnnasUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj",
+        "projectUniqueName": "D:\\Project\\Visual Studio 2022\\_Clones\\AnnasPen\\AnnasUI\\AnnasUI.csproj",
         "projectName": "AnnasUI",
-        "projectPath": "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj",
-        "packagesPath": "C:\\Users\\Annas\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\obj\\",
+        "projectPath": "D:\\Project\\Visual Studio 2022\\_Clones\\AnnasPen\\AnnasUI\\AnnasUI.csproj",
+        "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\Visual Studio 2022\\_Clones\\AnnasPen\\AnnasUI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Annas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
