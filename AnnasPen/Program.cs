@@ -12,6 +12,7 @@ namespace AnnasPen
     {
         private static Canvas canvas = new Canvas(1000, 1000, Color.WHITE);
         private static Vector2 previousMousePosition = Raylib.GetMousePosition();
+        private const int deltaCanvasResizing = 50;
 
         private static void GetInput()
         {
@@ -21,6 +22,7 @@ namespace AnnasPen
 
             previousMousePosition = mousePosition;
 
+            // only one of these inputs will accepted
             if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT_CONTROL) &&
                 Raylib.IsKeyPressed(KeyboardKey.KEY_Y))
             {
@@ -49,6 +51,25 @@ namespace AnnasPen
             {
                 Global.brush.size += Raylib.GetMouseWheelMove();
             }
+			else if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT_ALT))
+            {
+                if (Raylib.IsKeyPressed(KeyboardKey.KEY_RIGHT))
+                {
+                    canvas.Width = canvas.Width + deltaCanvasResizing;
+                }
+                else if(Raylib.IsKeyPressed(KeyboardKey.KEY_LEFT))
+				{
+					canvas.Width = canvas.Width - deltaCanvasResizing;
+				}
+				else if (Raylib.IsKeyPressed(KeyboardKey.KEY_UP))
+				{
+					canvas.Height = canvas.Height - deltaCanvasResizing;
+				}
+				else if (Raylib.IsKeyPressed(KeyboardKey.KEY_DOWN))
+				{
+					canvas.Height = canvas.Height + deltaCanvasResizing;
+				}
+			}
 			else
             {
                 Global.camera.zoom += (float)Raylib.GetMouseWheelMove() * 0.05f * Global.camera.zoom;

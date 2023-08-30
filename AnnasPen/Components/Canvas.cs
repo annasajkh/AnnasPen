@@ -67,7 +67,7 @@ namespace AnnasPen.Components
                 height = value;
 				Raylib.UnloadRenderTexture(renderTexture2D);
 				renderTexture2D = Raylib.LoadRenderTexture(width, height);
-				Clear();
+				RedrawRenderTexture2D(undoHistoryPointer);
 			}
         }
 
