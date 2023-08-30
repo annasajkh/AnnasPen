@@ -33,6 +33,10 @@ namespace AnnasPen
                 {
                     canvas.Undo();
                 }
+                else
+                {
+					Global.brush.size += Raylib.GetMouseWheelMove();
+				}
             }
             else if (Raylib.IsMouseButtonDown(MouseButton.MOUSE_BUTTON_RIGHT))
             {
@@ -47,10 +51,6 @@ namespace AnnasPen
             {
                 canvas.FinishDrawing();
                 Global.drawing = false;
-            }
-            else if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT_CONTROL))
-            {
-                Global.brush.size += Raylib.GetMouseWheelMove();
             }
             else if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT_ALT))
             {
