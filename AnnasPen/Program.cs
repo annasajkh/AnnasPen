@@ -23,15 +23,16 @@ namespace AnnasPen
             previousMousePosition = mousePosition;
 
             // only one of these inputs will accepted
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT_CONTROL) &&
-                Raylib.IsKeyPressed(KeyboardKey.KEY_Y))
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT_CONTROL))
             {
-                canvas.Redo();
-            }
-            else if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT_CONTROL) &&
-                     Raylib.IsKeyPressed(KeyboardKey.KEY_Z))
-            {
-                canvas.Undo();
+                if (Raylib.IsKeyPressed(KeyboardKey.KEY_Y))
+                {
+                    canvas.Redo();
+                }
+                else if (Raylib.IsKeyPressed(KeyboardKey.KEY_Z))
+                {
+                    canvas.Undo();
+                }
             }
             else if (Raylib.IsMouseButtonDown(MouseButton.MOUSE_BUTTON_RIGHT))
             {
@@ -51,26 +52,26 @@ namespace AnnasPen
             {
                 Global.brush.size += Raylib.GetMouseWheelMove();
             }
-			else if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT_ALT))
+            else if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT_ALT))
             {
                 if (Raylib.IsKeyPressed(KeyboardKey.KEY_RIGHT))
                 {
                     canvas.Width = canvas.Width + deltaCanvasResizing;
                 }
-                else if(Raylib.IsKeyPressed(KeyboardKey.KEY_LEFT))
-				{
-					canvas.Width = canvas.Width - deltaCanvasResizing;
-				}
-				else if (Raylib.IsKeyPressed(KeyboardKey.KEY_UP))
-				{
-					canvas.Height = canvas.Height - deltaCanvasResizing;
-				}
-				else if (Raylib.IsKeyPressed(KeyboardKey.KEY_DOWN))
-				{
-					canvas.Height = canvas.Height + deltaCanvasResizing;
-				}
-			}
-			else
+                else if (Raylib.IsKeyPressed(KeyboardKey.KEY_LEFT))
+                {
+                    canvas.Width = canvas.Width - deltaCanvasResizing;
+                }
+                else if (Raylib.IsKeyPressed(KeyboardKey.KEY_UP))
+                {
+                    canvas.Height = canvas.Height - deltaCanvasResizing;
+                }
+                else if (Raylib.IsKeyPressed(KeyboardKey.KEY_DOWN))
+                {
+                    canvas.Height = canvas.Height + deltaCanvasResizing;
+                }
+            }
+            else
             {
                 Global.camera.zoom += (float)Raylib.GetMouseWheelMove() * 0.05f * Global.camera.zoom;
             }
@@ -97,40 +98,40 @@ namespace AnnasPen
                                          rotation: 0,
                                          1.0f);
 
-
-            while (!Raylib.WindowShouldClose())
+			while (!Raylib.WindowShouldClose())
             {
-
-                if (Global.brush.size < 5)
-                {
-                    Global.brush.size = 5;
-                }
-                else if (Global.brush.size > 100)
-                {
-                    Global.brush.size = 100;
-                }
-
-                if (Global.camera.zoom > 50.0f)
-                {
-                    Global.camera.zoom = 50.0f;
-                }
-                else if (Global.camera.zoom < 0.25f)
-                {
-                    Global.camera.zoom = 0.25f;
-                }
-
-                Global.cameraOffsettedMousePosition = Raylib.GetScreenToWorld2D(Raylib.GetMousePosition(), Global.camera);
-
-                Global.mouseInsideCanvas = Raylib.CheckCollisionCircleRec(Global.cameraOffsettedMousePosition,
-                                                                          Global.brush.size * 0.5f,
-                                                                          new Rectangle(0,
-                                                                                        0,
-                                                                                        canvas.Width,
-                                                                                        canvas.Height));
 
                 UpdateAndDrawOnCanvas();
 
-                Raylib.BeginDrawing();
+
+				if (Global.brush.size < 5)
+				{
+					Global.brush.size = 5;
+				}
+				else if (Global.brush.size > 100)
+				{
+					Global.brush.size = 100;
+				}
+
+				if (Global.camera.zoom > 50.0f)
+				{
+					Global.camera.zoom = 50.0f;
+				}
+				else if (Global.camera.zoom < 0.25f)
+				{
+					Global.camera.zoom = 0.25f;
+				}
+
+				Global.cameraOffsettedMousePosition = Raylib.GetScreenToWorld2D(Raylib.GetMousePosition(), Global.camera);
+
+				Global.mouseInsideCanvas = Raylib.CheckCollisionCircleRec(Global.cameraOffsettedMousePosition,
+																		  Global.brush.size * 0.5f,
+																		  new Rectangle(0,
+																						0,
+																						canvas.Width,
+																						canvas.Height));
+
+				Raylib.BeginDrawing();
 
                 Raylib.ClearBackground(Color.DARKGRAY);
 
