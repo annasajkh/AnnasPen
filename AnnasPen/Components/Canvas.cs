@@ -36,8 +36,7 @@ namespace AnnasPen.Components
             set
             {
                 color = value;
-                Clear();
-            }
+			}
         }
 
         public int Width
@@ -50,9 +49,10 @@ namespace AnnasPen.Components
             set
             {
                 width = value;
-
-                //TODO: resize the actual RenderTexture2D
-            }
+				Raylib.UnloadRenderTexture(renderTexture2D);
+				renderTexture2D = Raylib.LoadRenderTexture(width, height);
+				RedrawRenderTexture2D(undoHistoryPointer);
+			}
         }
 
         public int Height
@@ -65,9 +65,10 @@ namespace AnnasPen.Components
             set
             {
                 height = value;
-
-                //TODO: resize the actual RenderTexture2D
-            }
+				Raylib.UnloadRenderTexture(renderTexture2D);
+				renderTexture2D = Raylib.LoadRenderTexture(width, height);
+				Clear();
+			}
         }
 
         public List<ImagePart> undoHistory;

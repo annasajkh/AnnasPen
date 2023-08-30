@@ -3,7 +3,7 @@ using AnnasPen.Components;
 using AnnasPen.Utils;
 using Raylib_cs;
 using System.Numerics;
-
+using System.Threading.Tasks.Sources;
 
 namespace AnnasPen
 {
@@ -49,7 +49,7 @@ namespace AnnasPen
             {
                 Global.brush.size += Raylib.GetMouseWheelMove();
             }
-            else
+			else
             {
                 Global.camera.zoom += (float)Raylib.GetMouseWheelMove() * 0.05f * Global.camera.zoom;
             }
@@ -69,6 +69,7 @@ namespace AnnasPen
         {
 
             Raylib.InitWindow(860, 560, "Annas Pen");
+            Raylib.SetTargetFPS(60);
 
             Global.camera = new Camera2D(offset: new Vector2(Raylib.GetScreenWidth() / 2, Raylib.GetScreenHeight() / 2),
                                          target: new Vector2(canvas.Width / 2, canvas.Height / 2),
