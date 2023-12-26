@@ -1,3 +1,5 @@
 AnnasPen/bin/
 AnnasUI/bin/
-/.vs
+.vs/
+AnnasPen/obj/
+AnnasUI/obj/

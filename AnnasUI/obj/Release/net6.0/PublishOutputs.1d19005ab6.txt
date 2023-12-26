@@ -1,9 +1,0 @@
-D:\Projects\Programming\C#\AnnasPen\AnnasUI\bin\Release\net6.0\publish\AnnasUI.dll
-D:\Projects\Programming\C#\AnnasPen\AnnasUI\bin\Release\net6.0\publish\AnnasUI.deps.json
-D:\Projects\Programming\C#\AnnasPen\AnnasUI\bin\Release\net6.0\publish\AnnasUI.pdb
-D:\Projects\Programming\C#\AnnasPen\AnnasUI\bin\Release\net6.0\publish\Raylib-cs.dll
-D:\Projects\Programming\C#\AnnasPen\AnnasUI\bin\Release\net6.0\publish\runtimes\linux-x64\native\libraylib.so
-D:\Projects\Programming\C#\AnnasPen\AnnasUI\bin\Release\net6.0\publish\runtimes\osx-arm64\native\libraylib.dylib
-D:\Projects\Programming\C#\AnnasPen\AnnasUI\bin\Release\net6.0\publish\runtimes\osx-x64\native\libraylib.dylib
-D:\Projects\Programming\C#\AnnasPen\AnnasUI\bin\Release\net6.0\publish\runtimes\win-x64\native\raylib.dll
-D:\Projects\Programming\C#\AnnasPen\AnnasUI\bin\Release\net6.0\publish\runtimes\win-x86\native\raylib.dll
