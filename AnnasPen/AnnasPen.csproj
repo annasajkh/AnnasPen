@@ -8,7 +8,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <SignAssembly>True</SignAssembly>
     <DelaySign>False</DelaySign>
-	<PublishAot>true</PublishAot>
+    <PublishAot>true</PublishAot>
   </PropertyGroup>
 
   <ItemGroup>
