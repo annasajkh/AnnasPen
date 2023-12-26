@@ -1,16 +1,15 @@
 ﻿using Raylib_cs;
 
-namespace AnnasPen.Brushes
+namespace AnnasPen.Brushes;
+
+internal class Pen : Brush
 {
-    internal class Pen : Brush
+
+
+    public Pen()
+        : base(10, Color.BLACK, DrawType.LINE)
     {
 
-
-        public Pen() 
-            : base(10, Color.BLACK, DrawType.LINE)
-        {
-
-        }
-
     }
+
 }

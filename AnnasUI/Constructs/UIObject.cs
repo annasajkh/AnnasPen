@@ -2,42 +2,41 @@ using Raylib_cs;
 using System.Numerics;
 
 
-namespace AnnasUI.Constructs
+namespace AnnasUI.Constructs;
+
+public abstract class UIObject
 {
-    public abstract class UIObject
+    public Vector2 position;
+    public Color color;
+
+    protected Vector2 size;
+
+    public UIObject(Vector2 position, Vector2 size, Color color)
     {
-        public Vector2 position;
-        public Color color;
+        this.position = position;
+        this.size = size;
+        this.color = color;
+    }
 
-        protected Vector2 size;
+    public bool MouseInside()
+    {
+        Vector2 mousePosition = Raylib.GetMousePosition();
 
-        public UIObject(Vector2 position, Vector2 size, Color color)
-        {
-            this.position = position;
-            this.size = size;
-            this.color = color;
-        }
+        return mousePosition.X >= position.X - size.X / 2 &&
+               mousePosition.X <= position.X + size.X / 2 &&
+               mousePosition.Y >= position.Y - size.Y / 2 &&
+               mousePosition.Y <= position.Y + size.Y / 2;
+    }
 
-        public bool MouseInside()
-        {
-            Vector2 mousePosition = Raylib.GetMousePosition();
+    public bool Clicked()
+    {
+        return MouseInside() && Raylib.IsMouseButtonDown(MouseButton.MOUSE_BUTTON_LEFT);
+    }
 
-            return mousePosition.X >= position.X - size.X / 2 &&
-                   mousePosition.X <= position.X + size.X / 2 &&
-                   mousePosition.Y >= position.Y - size.Y / 2 &&
-                   mousePosition.Y <= position.Y + size.Y / 2;
-        }
+    public abstract void Update();
 
-        public bool Clicked()
-        {
-            return MouseInside() && Raylib.IsMouseButtonDown(MouseButton.MOUSE_BUTTON_LEFT);
-        }
-
-        public abstract void Update();
-
-        public virtual void Draw()
-        {
-            Update();
-        }
+    public virtual void Draw()
+    {
+        Update();
     }
 }

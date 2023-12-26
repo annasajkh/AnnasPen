@@ -6,7 +6,6 @@ using System.Numerics;
 
 namespace AnnasPen;
 
-
 internal class Program
 {
     private static Canvas canvas = new Canvas(1000, 1000, Color.WHITE);

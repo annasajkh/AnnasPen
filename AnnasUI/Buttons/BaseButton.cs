@@ -1,7 +1,6 @@
 using AnnasUI.Constructs;
 using AnnasUI.Labels;
 using Raylib_cs;
-
 using System.Numerics;
 
 namespace AnnasUI.Buttons;
