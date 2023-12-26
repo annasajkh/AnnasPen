@@ -33,13 +33,6 @@ public class Label : UIObject
     {
         base.Draw();
 
-        Raylib.DrawTextPro(font: font,
-                           text: text,
-                           position: position,
-                           origin: textOrigin,
-                           rotation: 0,
-                           fontSize: fontSize,
-                           spacing: 1,
-                           tint: color);
+        Raylib.DrawTextPro(font, text, position, textOrigin, 0, fontSize, 1, color);
     }
 }

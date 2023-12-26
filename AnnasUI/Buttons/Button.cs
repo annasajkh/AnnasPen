@@ -23,10 +23,7 @@ public class Button : UIObject
     {
         base.Draw();
 
-        Raylib.DrawRectangle((int)position.X - (int)size.X / 2,
-                             (int)position.Y - (int)size.X / 2,
-                             (int)size.X, (int)size.Y,
-                             color);
+        Raylib.DrawRectangle((int)position.X - (int)size.X / 2, (int)position.Y - (int)size.X / 2, (int)size.X, (int)size.Y, color);
 
         label.Draw();
     }
