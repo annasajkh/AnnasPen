@@ -12,9 +12,7 @@ public class Label : UIObject
     private int fontSize;
     private Vector2 textOrigin;
 
-    public Label(string text, Vector2 position, Font font, int fontSize, Color color) : base(position: position,
-                                                                                             size: new Vector2((text.Length * fontSize + text.Length) / 2, fontSize),
-                                                                                             color: color)
+    public Label(string text, Vector2 position, Font font, int fontSize, Color color) : base(position, new Vector2((text.Length * fontSize + text.Length) / 2, fontSize), color)
     {
         this.text = text;
         this.color = color;
