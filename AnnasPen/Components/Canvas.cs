@@ -33,11 +33,11 @@ internal class Canvas
             return color;
         }
 
-            set
-            {
-                color = value;
-			}
+        set
+        {
+            color = value;
         }
+    }
 
     public int Width
     {
@@ -46,14 +46,14 @@ internal class Canvas
             return width;
         }
 
-            set
-            {
-                width = value;
-				Raylib.UnloadRenderTexture(renderTexture2D);
-				renderTexture2D = Raylib.LoadRenderTexture(width, height);
-				RedrawRenderTexture2D(undoHistoryPointer);
-			}
+        set
+        {
+            width = value;
+            Raylib.UnloadRenderTexture(renderTexture2D);
+            renderTexture2D = Raylib.LoadRenderTexture(width, height);
+            RedrawRenderTexture2D(undoHistoryPointer);
         }
+    }
 
     public int Height
     {
@@ -62,14 +62,14 @@ internal class Canvas
             return height;
         }
 
-            set
-            {
-                height = value;
-				Raylib.UnloadRenderTexture(renderTexture2D);
-				renderTexture2D = Raylib.LoadRenderTexture(width, height);
-				RedrawRenderTexture2D(undoHistoryPointer);
-			}
+        set
+        {
+            height = value;
+            Raylib.UnloadRenderTexture(renderTexture2D);
+            renderTexture2D = Raylib.LoadRenderTexture(width, height);
+            RedrawRenderTexture2D(undoHistoryPointer);
         }
+    }
 
     public List<ImagePart> undoHistory;
     public Queue<DrawAction> drawActionCache;
