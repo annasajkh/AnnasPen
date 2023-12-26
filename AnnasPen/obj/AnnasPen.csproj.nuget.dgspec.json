@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\C#\\AnnasPen\\AnnasPen\\AnnasPen.csproj": {}
+    "D:\\Projects\\Programming\\C#\\AnnasPen\\AnnasPen\\AnnasPen.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\C#\\AnnasPen\\AnnasPen\\AnnasPen.csproj": {
+    "D:\\Projects\\Programming\\C#\\AnnasPen\\AnnasPen\\AnnasPen.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\C#\\AnnasPen\\AnnasPen\\AnnasPen.csproj",
+        "projectUniqueName": "D:\\Projects\\Programming\\C#\\AnnasPen\\AnnasPen\\AnnasPen.csproj",
         "projectName": "AnnasPen",
-        "projectPath": "D:\\Projects\\C#\\AnnasPen\\AnnasPen\\AnnasPen.csproj",
+        "projectPath": "D:\\Projects\\Programming\\C#\\AnnasPen\\AnnasPen\\AnnasPen.csproj",
         "packagesPath": "C:\\Users\\Annas\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\C#\\AnnasPen\\AnnasPen\\obj\\",
+        "outputPath": "D:\\Projects\\Programming\\C#\\AnnasPen\\AnnasPen\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Users\\Annas\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
@@ -24,18 +24,18 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net8.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0-windows7.0": {
-            "targetAlias": "net6.0-windows",
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj": {
-                "projectPath": "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj"
+              "D:\\Projects\\Programming\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj": {
+                "projectPath": "D:\\Projects\\Programming\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj"
               }
             }
           }
@@ -47,12 +47,24 @@
         }
       },
       "frameworks": {
-        "net6.0-windows7.0": {
-          "targetAlias": "net6.0-windows",
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
           "dependencies": {
+            "Microsoft.DotNet.ILCompiler": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )",
+              "autoReferenced": true
+            },
             "Raylib-cs": {
               "target": "Package",
-              "version": "[4.2.0.2, )"
+              "version": "[5.0.0, )"
             }
           },
           "imports": [
@@ -66,23 +78,46 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[8.0.0, 8.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[8.0.0, 8.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[8.0.0, 8.0.0]"
+            },
+            {
+              "name": "runtime.win-x64.Microsoft.DotNet.ILCompiler",
+              "version": "[8.0.0, 8.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
         }
       }
     },
-    "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj": {
+    "D:\\Projects\\Programming\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj",
+        "projectUniqueName": "D:\\Projects\\Programming\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj",
         "projectName": "AnnasUI",
-        "projectPath": "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj",
+        "projectPath": "D:\\Projects\\Programming\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj",
         "packagesPath": "C:\\Users\\Annas\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\obj\\",
+        "outputPath": "D:\\Projects\\Programming\\C#\\AnnasPen\\AnnasUI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Users\\Annas\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
@@ -138,7 +173,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

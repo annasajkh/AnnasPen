@@ -10,4 +10,8 @@
     <PackageReference Include="Raylib-cs" Version="4.2.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controls\" />
+  </ItemGroup>
+
 </Project>

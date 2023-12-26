@@ -1,11 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "OAH8UWmXF+4uhRMglVEe62SFYOHCnsC3SvvkxkGQWLZxRL5uKKXbtyBZMJ737RaPVMCafbz/fy+32B+BRuPesw==",
+  "dgSpecHash": "qjUPa/lrs7Png5OEqkoaPPcj4PChZ+CO3yHRje5p6zIJTCGwDjDD+amJ5aBx9DX4Btzfdp7jiCFwyZr5dTsQJg==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\C#\\AnnasPen\\AnnasPen\\AnnasPen.csproj",
+  "projectFilePath": "D:\\Projects\\Programming\\C#\\AnnasPen\\AnnasPen\\AnnasPen.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Annas\\.nuget\\packages\\raylib-cs\\4.2.0.2\\raylib-cs.4.2.0.2.nupkg.sha512",
-    "C:\\Users\\Annas\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+    "C:\\Users\\Annas\\.nuget\\packages\\microsoft.dotnet.ilcompiler\\8.0.0\\microsoft.dotnet.ilcompiler.8.0.0.nupkg.sha512",
+    "C:\\Users\\Annas\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.0\\microsoft.net.illink.tasks.8.0.0.nupkg.sha512",
+    "C:\\Users\\Annas\\.nuget\\packages\\raylib-cs\\5.0.0\\raylib-cs.5.0.0.nupkg.sha512",
+    "C:\\Users\\Annas\\.nuget\\packages\\runtime.win-x64.microsoft.dotnet.ilcompiler\\8.0.0\\runtime.win-x64.microsoft.dotnet.ilcompiler.8.0.0.nupkg.sha512",
+    "C:\\Users\\Annas\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Annas\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.0\\microsoft.netcore.app.runtime.win-x64.8.0.0.nupkg.sha512",
+    "C:\\Users\\Annas\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.0\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.0.nupkg.sha512",
+    "C:\\Users\\Annas\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.0\\microsoft.aspnetcore.app.runtime.win-x64.8.0.0.nupkg.sha512",
+    "C:\\Users\\Annas\\.nuget\\packages\\runtime.win-x64.microsoft.dotnet.ilcompiler\\8.0.0\\runtime.win-x64.microsoft.dotnet.ilcompiler.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,0 +1,4 @@
+D:\Projects\Programming\C#\AnnasPen\AnnasPen\bin\Release\net8.0-windows\win-x64\publish\AnnasPen.exe
+D:\Projects\Programming\C#\AnnasPen\AnnasPen\bin\Release\net8.0-windows\win-x64\publish\AnnasPen.pdb
+D:\Projects\Programming\C#\AnnasPen\AnnasPen\bin\Release\net8.0-windows\win-x64\publish\raylib.dll
+D:\Projects\Programming\C#\AnnasPen\AnnasPen\bin\Release\net8.0-windows\win-x64\publish\AnnasUI.pdb

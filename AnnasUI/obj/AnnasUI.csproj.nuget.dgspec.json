@@ -1,20 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj": {}
+    "D:\\Projects\\Programming\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj": {
+    "D:\\Projects\\Programming\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj",
+        "projectUniqueName": "D:\\Projects\\Programming\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj",
         "projectName": "AnnasUI",
-        "projectPath": "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj",
+        "projectPath": "D:\\Projects\\Programming\\C#\\AnnasPen\\AnnasUI\\AnnasUI.csproj",
         "packagesPath": "C:\\Users\\Annas\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\C#\\AnnasPen\\AnnasUI\\obj\\",
+        "outputPath": "D:\\Projects\\Programming\\C#\\AnnasPen\\AnnasUI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Users\\Annas\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Annas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Annas\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
