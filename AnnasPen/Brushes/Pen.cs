@@ -6,8 +6,7 @@ internal class Pen : Brush
 {
 
 
-    public Pen()
-        : base(10, Color.BLACK, DrawType.LINE)
+    public Pen() : base(10, Color.BLACK, DrawType.LINE)
     {
 
     }

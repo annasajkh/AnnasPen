@@ -9,7 +9,6 @@ namespace AnnasPen.Components;
 internal class Canvas
 {
     private int width, height;
-    private Color color;
     //rectangle for cropping image history image
     private Rectangle undoHistoryRectangle;
     private RenderTexture2D renderTexture2D;
@@ -26,18 +25,7 @@ internal class Canvas
             return renderTexture2D;
         }
     }
-    public Color Color
-    {
-        get
-        {
-            return color;
-        }
-
-        set
-        {
-            color = value;
-        }
-    }
+    public Color Color { get; set; }
 
     public int Width
     {
@@ -49,6 +37,7 @@ internal class Canvas
         set
         {
             width = value;
+
             Raylib.UnloadRenderTexture(renderTexture2D);
             renderTexture2D = Raylib.LoadRenderTexture(width, height);
             RedrawRenderTexture2D(undoHistoryPointer);
@@ -65,6 +54,7 @@ internal class Canvas
         set
         {
             height = value;
+
             Raylib.UnloadRenderTexture(renderTexture2D);
             renderTexture2D = Raylib.LoadRenderTexture(width, height);
             RedrawRenderTexture2D(undoHistoryPointer);
@@ -79,7 +69,7 @@ internal class Canvas
     {
         this.width = width;
         this.height = height;
-        this.color = color;
+        Color = color;
 
         undoHistory = new List<ImagePart>();
         drawActionCache = new Queue<DrawAction>();
@@ -93,7 +83,7 @@ internal class Canvas
     public void Clear()
     {
         Raylib.BeginTextureMode(RenderTexture2D);
-        Raylib.ClearBackground(color);
+        Raylib.ClearBackground(Color);
         Raylib.EndTextureMode();
     }
 
@@ -106,7 +96,6 @@ internal class Canvas
     {
         Clear();
 
-
         List<Texture2D> textures = new List<Texture2D>();
 
         // redraw the RenderTexture2D with all of the undoHistory
@@ -118,15 +107,9 @@ internal class Canvas
             textures.Add(Raylib.LoadTextureFromImage(undoHistory[i].image));
 
 
-            Raylib.DrawTexture(textures[textures.Count - 1],
-                              (int)undoHistory[i].position.X,
-                              (int)undoHistory[i].position.Y,
-                              Color.WHITE);
+            Raylib.DrawTexture(textures[textures.Count - 1], (int)undoHistory[i].position.X, (int)undoHistory[i].position.Y, Color.WHITE);
 
-            //Raylib.DrawRectangleLinesEx(new Rectangle((int)undoHistory[i].position.X,
-            //                                          (int)undoHistory[i].position.Y,
-            //                                          undoHistory[i].image.width,
-            //                                          undoHistory[i].image.height), 1, Color.BLACK);
+            //Raylib.DrawRectangleLinesEx(new Rectangle((int)undoHistory[i].position.X, (int)undoHistory[i].position.Y, undoHistory[i].image.Width, undoHistory[i].image.Height), 1, Color.BLACK);
 
         }
 
@@ -179,10 +162,7 @@ internal class Canvas
         undoHistoryRectangleLeft = (float)Math.Floor(undoHistoryRectangleLeft);
         undoHistoryRectangleRight = (float)Math.Floor(undoHistoryRectangleRight);
 
-        undoHistoryRectangle = new Rectangle(undoHistoryRectangleLeft,
-                                             undoHistoryRectangleTop,
-                                             Math.Abs(undoHistoryRectangleRight - undoHistoryRectangleLeft),
-                                             Math.Abs(undoHistoryRectangleBottom - undoHistoryRectangleTop));
+        undoHistoryRectangle = new Rectangle(undoHistoryRectangleLeft, undoHistoryRectangleTop, Math.Abs(undoHistoryRectangleRight - undoHistoryRectangleLeft), Math.Abs(undoHistoryRectangleBottom - undoHistoryRectangleTop));
 
         undoHistoryRectangleLeft = 0;
         undoHistoryRectangleRight = 0;
@@ -295,33 +275,15 @@ internal class Canvas
         switch (drawAction.brush.drawType)
         {
             case DrawType.CIRCLE:
-                Raylib.DrawCircle((int)drawAction.position.X,
-                                  (int)drawAction.position.Y,
-                                  drawAction.brush.size * 0.5f,
-                                  drawAction.brush.color);
+                Raylib.DrawCircle((int)drawAction.position.X, (int)drawAction.position.Y, drawAction.brush.size * 0.5f, drawAction.brush.color);
                 break;
 
             case DrawType.LINE:
                 DrawAction previousDrawAction = drawActionCache.Peek();
 
-
-                Raylib.DrawCircle((int)drawAction.position.X,
-                                  (int)drawAction.position.Y,
-                                  drawAction.brush.size * 0.5f,
-                                  drawAction.brush.color
-                );
-
-                Raylib.DrawCircle((int)previousDrawAction.position.X,
-                                  (int)previousDrawAction.position.Y,
-                                  previousDrawAction.brush.size * 0.5f,
-                                  previousDrawAction.brush.color
-                );
-
-                Raylib.DrawLineEx(drawAction.position,
-                                  previousDrawAction.position,
-                                  drawAction.brush.size,
-                                  drawAction.brush.color);
-
+                Raylib.DrawCircle((int)drawAction.position.X, (int)drawAction.position.Y, drawAction.brush.size * 0.5f, drawAction.brush.color);
+                Raylib.DrawCircle((int)previousDrawAction.position.X, (int)previousDrawAction.position.Y, previousDrawAction.brush.size * 0.5f, previousDrawAction.brush.color);
+                Raylib.DrawLineEx(drawAction.position, previousDrawAction.position, drawAction.brush.size, drawAction.brush.color);
                 break;
         }
 

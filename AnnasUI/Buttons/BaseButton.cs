@@ -24,9 +24,9 @@ public class BaseButton : UIObject
         base.Draw();
 
         Raylib.DrawRectangle((int)position.X - (int)size.X / 2,
-                         (int)position.Y - (int)size.Y / 2,
-                         (int)size.X, (int)size.Y,
-                         color);
+                             (int)position.Y - (int)size.Y / 2,
+                             (int)size.X, (int)size.Y,
+                             color);
 
         label.Draw();
     }

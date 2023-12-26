@@ -92,10 +92,7 @@ internal class Program
         Raylib.InitWindow(860, 560, "Annas Pen");
         Raylib.SetTargetFPS(60);
 
-        Global.camera = new Camera2D(offset: new Vector2(Raylib.GetScreenWidth() / 2, Raylib.GetScreenHeight() / 2),
-                                     target: new Vector2(canvas.Width / 2, canvas.Height / 2),
-                                     rotation: 0,
-                                     1.0f);
+        Global.camera = new Camera2D(new Vector2(Raylib.GetScreenWidth() / 2, Raylib.GetScreenHeight() / 2), new Vector2(canvas.Width / 2, canvas.Height / 2), 0, 1.0f);
 
         while (!Raylib.WindowShouldClose())
         {
@@ -123,12 +120,7 @@ internal class Program
 
             Global.cameraOffsettedMousePosition = Raylib.GetScreenToWorld2D(Raylib.GetMousePosition(), Global.camera);
 
-            Global.mouseInsideCanvas = Raylib.CheckCollisionCircleRec(Global.cameraOffsettedMousePosition,
-                                                                      Global.brush.size * 0.5f,
-                                                                      new Rectangle(0,
-                                                                                    0,
-                                                                                    canvas.Width,
-                                                                                    canvas.Height));
+            Global.mouseInsideCanvas = Raylib.CheckCollisionCircleRec(Global.cameraOffsettedMousePosition, Global.brush.size * 0.5f, new Rectangle(0, 0, canvas.Width, canvas.Height));
 
             Raylib.BeginDrawing();
 
@@ -145,17 +137,8 @@ internal class Program
 
             Raylib.EndMode2D();
 
-            Raylib.DrawLine(Raylib.GetScreenWidth() / 2,
-                            Raylib.GetScreenHeight() / 2 - 10,
-                            Raylib.GetScreenWidth() / 2,
-                            Raylib.GetScreenHeight() / 2 + 10,
-                            Color.GRAY);
-
-            Raylib.DrawLine(Raylib.GetScreenWidth() / 2 - 10,
-                            Raylib.GetScreenHeight() / 2,
-                            Raylib.GetScreenWidth() / 2 + 10,
-                            Raylib.GetScreenHeight() / 2,
-                            Color.GRAY);
+            Raylib.DrawLine(Raylib.GetScreenWidth() / 2, Raylib.GetScreenHeight() / 2 - 10, Raylib.GetScreenWidth() / 2, Raylib.GetScreenHeight() / 2 + 10, Color.GRAY);
+            Raylib.DrawLine(Raylib.GetScreenWidth() / 2 - 10, Raylib.GetScreenHeight() / 2, Raylib.GetScreenWidth() / 2 + 10, Raylib.GetScreenHeight() / 2, Color.GRAY);
 
             Raylib.EndDrawing();
         }
